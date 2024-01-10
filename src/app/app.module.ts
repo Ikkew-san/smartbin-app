@@ -1,40 +1,34 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { BrowserModule } from "@angular/platform-browser";
+import { ErrorHandler, NgModule } from "@angular/core";
+import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
+import { IonicStorageModule } from "@ionic/storage";
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { Camera } from '@ionic-native/camera';
+import { HttpClientModule } from "@angular/common/http";
+import { MyApp } from "./app.component";
+import { AuthProvider } from "../providers/auth/auth";
+import { ConfigProvider } from "../providers/config/config";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
+  declarations: [MyApp],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
-  ],
+  entryComponents: [MyApp],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    QRScanner,
+    Camera,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthProvider,
+    ConfigProvider
   ]
 })
 export class AppModule {}

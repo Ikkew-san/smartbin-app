@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="login">
+    <div class="inner">
+      <div class="logo-login">
+        <img src="../assets/icon/logo.png">
+        <ion-label no-margin>Smart Bin</ion-label>
+      </div>
+
+      <div class="form-login">
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-icon name="person" item-left></ion-icon>
+                  <ion-input type="text" placeholder="ชื่อผู้ใช้" name="username" required ngModel></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-icon name="lock" item-left></ion-icon>
+                  <ion-input type="password" placeholder="รหัสผ่าน" name="password" required ngModel></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <button ion-button type="submit" ion-button full margin-top>เข้าสู่ระบบ</button>
+        </form>
+
+        <p class="register">
+          ยังไม่มีบัญชีผู้ใช้ใช่ไหม? <a (click)="gotoRegister()">สมัครสมาชิก</a> ที่นี้
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

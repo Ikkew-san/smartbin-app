@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ExchangelistHistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navbar">
+    <span style="font-size: 14pt">ประวัติแลกของรางวัล</span>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-toolbar no-padding>
+    <ion-segment [(ngModel)]="status" (ionChange)="selectedStatus()" no-margin>
+      <ion-segment-button value="4">
+        รับแล้ว
+      </ion-segment-button>
+      <ion-segment-button value="0">
+        ยกเลิก
+      </ion-segment-button> 
+    </ion-segment>
+  </ion-toolbar>
+  <div class="content" *ngFor="let dataExchange of dataExchangeHistory">
+    <ion-row padding-horizontal style="background-color: gainsboro">
+      <ion-col>{{dataExchange.exchange_created_at}}</ion-col>
+    </ion-row>
+    <ion-grid no-margin margin-bottom>
+      <ion-row *ngFor="let dataExchangelist of dataExchange.exchangelist; let i = index;">
+        <ion-col col-6 padding-left>
+          {{dataExchangelist.rewards_name}}
+        </ion-col>
+        <ion-col col-3 text-center>
+          {{dataExchangelist.exchangelist_amount}}
+        </ion-col>
+        <ion-col col-3 text-center>
+          {{dataExchangelist.exchangelist_points}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

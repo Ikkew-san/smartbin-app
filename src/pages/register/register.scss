@@ -1,0 +1,64 @@
+page-register {
+  ion-content {
+    // background-color: rgba(250, 250, 250, 0.7) !important;
+
+    .register {
+      height: 100vh;
+      display: flex;
+      // align-items: center;
+
+      .inner {
+        flex: 1;
+        display: block !important;
+        text-align: center;
+
+        .title-register {
+          font-size: 18pt;
+          font-weight: bold;
+          color: #63A094;
+          margin: 25px 0 0;
+        }
+
+        .form-register {
+          margin: 0 25px;
+
+          ion-item {
+            padding: 0;
+            color: #63A094;
+            margin-bottom: 5px;
+            background-color: rgba($color: #fff, $alpha: 0);
+
+            .item-inner {
+              padding: 0 !important;
+            }
+
+            ion-label {
+              margin: 5px 0 0 0;
+            }
+
+            ion-input {
+              font-size: 14px !important;
+
+              ::placeholder {
+                color: rgba(99, 160, 148, 0.8);
+                font-size: 10pt;
+              }
+            }
+
+            .item-label-floating {
+              margin-top: 0 !important;
+            }
+          }
+
+          [margin-top] {
+            margin-top: 30px;
+          }
+
+          .login {
+            margin: 25px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+page-points-view {
+  ion-content {
+    background-color: #fff !important;
+
+    .logo {
+      display: flex;
+      align-items: flex-start;
+      font-size: 4vh;
+      font-weight: bold;
+      color: #63A094;
+
+      img {
+        height: 8vh;
+        margin-right: 0.8rem;
+      }
+    }
+
+    .avatar {
+      display: block;
+      text-align: right;
+
+      img {
+        height: 8vh !important;
+        border-radius: 100%;
+      }
+    }
+
+    .text-header {
+      display: initial !important;
+
+      .text-1 {
+        font-size: 3.5vh;
+        font-weight: bold;
+      }
+
+      .text-2 {
+        font-size: 2.8vh;
+      }
+
+      .my-points {
+        font-size: 2vh;
+      }
+    }
+
+    .content {
+      display: initial !important;
+      text-align: center;
+      margin: 7vh 0 7vh;
+      font-size: 3vh;
+
+      img {
+        height: 32vh;
+      }
+    }
+
+    .points {
+      display: inline;
+      text-align: center;
+
+      .new-points {
+        font-size: 3vh;
+        margin-bottom: 0.5vh
+      }
+
+      .points-bottle {
+        color: red;
+        margin-bottom: 0.5vh
+      }
+    }
+  }
+}

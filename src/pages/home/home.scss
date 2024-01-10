@@ -1,3 +1,81 @@
 page-home {
+  ion-header {
+    div.logo {
+      display: flex;
+      align-items: center;
+      font-size: 20pt;
+      font-weight: bold;
+      color: #63A094;
 
-}
+      img {
+        width: 30px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  ion-content {
+    .home {
+      // height: 75vh;
+      display: flex;
+      align-items: center;
+    
+      .inner {
+        flex: 1;
+        display: block !important;
+        text-align: center;
+        
+        div.amountPoints {
+          display: flex !important;
+          align-items: center;
+                      
+          strong {
+            font-size: 5em;
+          }
+
+          img {
+            margin-right: 1em;
+          }
+        }
+      }
+    } 
+
+    .newRewards {
+
+      // ion-slides {
+      //   // height: none;
+      // }
+    }
+  }
+  ion-card {
+    margin: 5px !important;
+    width: auto !important;
+    border-radius: 1rem !important;
+
+    [padding-horizontal] {
+      padding-top: 10px !important;
+      padding-bottom: 0;
+    }
+
+    ion-grid {
+      padding-top: 2px;
+    }
+
+    .coin {
+      width: 22px;
+      height: 22px;
+    }
+
+    .button {
+      padding: 0 25px;
+      margin-bottom: 6px;
+      border-radius: 1em;
+    }
+    } 
+    .new{
+      padding: 4px;
+      background-color: red;
+      color: white;
+      border-radius: 1rem;
+    }
+  }

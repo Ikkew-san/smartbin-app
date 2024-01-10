@@ -1,0 +1,48 @@
+<ion-content padding-horizontal text-center>
+  <div class="register">
+    <div class="inner">
+      <ion-label class="title-register">สร้างบัญชีผู้ใช้ใหม่</ion-label>
+
+      <div class="form-register">
+        <!-- <form #f="ngForm" (ngSubmit)="onSubmit()"> -->
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label floating>ชื่อจริง</ion-label>
+            <ion-input type="text" formControlName="firstname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>นามสกุล</ion-label>
+            <ion-input type="text" formControlName="lastname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>ชื่อผู้ใช้</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>รหัสผ่าน</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+<!-- 
+          <ion-item>
+            <ion-label floating>ยืนยันรหัสผ่าน</ion-label>
+            <ion-input type="password" formControlName="confirm_password"></ion-input>
+          </ion-item> -->
+
+          <ion-item>
+            <ion-label floating>อีเมล</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+
+          <button ion-button type="submit"  [disabled]="!registerForm.valid" full margin-top>สมัครสมาชิก</button>
+        </form>
+        
+        <p class="login" text-center>
+          คุณมีบัญชีผู้ใช้อยู่แล้วใช่ไหม? <a (click)="gotoLoginPage()">เข้าสู่ระบบ</a> ที่นี้
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

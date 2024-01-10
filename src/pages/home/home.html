@@ -1,17 +1,84 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="navbar">
+    <div class="logo">
+      <img src="../assets/icon/logo.png" />
+      <label>SmartBin</label>
+    </div>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="home" padding>
+    <div class="inner">
+      <div class="amountPoints">
+        <img src="../assets/imgs/coin.png" width="75" />
+        <strong>{{ myPoints }}</strong>
+      </div>
+      <hr />
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col col-6>
+            <ion-buttons>
+              <button ion-button block clear (click)="gotoQRscan()">
+                <ion-icon name="qr-scanner"></ion-icon>&nbsp;คิวอาร์โค้ด
+              </button>
+            </ion-buttons>
+          </ion-col>
+
+          <ion-col col-6>
+            <ion-buttons>
+              <button ion-button block clear (click)="goPointsHistory()">
+                ประวัติสะสมคะแนน
+              </button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="newRewards">
+    <ion-slides slidesPerView="1.6" spaceBetween="10" centeredSlides="true">
+      <ion-slide *ngFor="let data of dataRewards;">
+        <ion-card no-padding>
+          <ion-card-header text-left>
+            <span class="new">สินค้าใหม่</span>
+          </ion-card-header>
+          <img [src]="data.image_url" />
+          <ion-card-content padding-horizontal>
+            <h2 text-center>{{ data.rewards_name }}</h2>
+            <ion-grid>
+              <ion-row>
+                <img col-auto class="coin" src="../assets/imgs/coin.png" />
+                <strong col-auto style="font-size: 12pt; margin-left: 0.5em">{{ data.rewards_points }}</strong>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!-- <div>
+    <ion-slides [options]="sliderConfig">
+      <ion-slide>
+        <div *ngIf="cat.expanded">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                {{ product.name }} - ${{ product.price }}
+              </ion-card-title>
+              <ion-card-content>
+                <img src="https://via.placeholder.com/300x300">
+                <ion-button expand="full" (click)="">Add to Cart</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div> -->
 </ion-content>

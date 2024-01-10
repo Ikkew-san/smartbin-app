@@ -1,0 +1,23 @@
+page-exchangelist-history {
+  ion-navbar {
+    padding: 0px !important;
+  }
+
+  ion-grid {
+    margin: 3px 0;
+    background: #fff;
+  }
+
+  ion-toolbar {
+    .toolbar-background {
+      background-color: #fff;
+    }
+  }
+
+  ion-toolbar {
+    padding: 0 2vw !important;
+  }
+  .content {
+    padding: 0 3vw !important;
+  }
+}

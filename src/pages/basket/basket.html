@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <span style="font-size: 14pt">ตะกร้า</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let rewards of dataInBasket; let i = index;">
+    <ion-row>
+      <ion-col col-4>
+        <img [src]="rewards.image_url" />
+      </ion-col>
+
+      <ion-col col-8>
+        <strong>{{rewards.rewards_name}}</strong>
+        <p>{{rewards.rewards_points}}</p>
+
+        <ion-row text-center>
+          <button ion-button color="danger" (click)="removeRewards(i)" clear>
+            <ion-icon name="trash"></ion-icon>
+          </button>
+
+          <button ion-button clear (click)="decrease(i)" [disabled]="rewards.amount == 1">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+
+          <ion-col col-2>
+            <ion-input type="number" class="num" [(ngModel)]="rewards.amount" min="1" disabled></ion-input>
+          </ion-col>
+
+          <button ion-button clear (click)="increase(i)">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row padding-horizontal>
+      <div col><strong>คะแนนทั้งหมด</strong> </div>
+      <div class="amountPoints" col>
+        <strong>{{totalPoints}}</strong>
+        <img col-auto class="coin" src="../assets/imgs/coin.png" />
+      </div>
+      <button col-12 ion-button full (click)="exchangeRewards()"
+        [disabled]="dataInBasket == '' || dataInBasket == null || myPoints < totalPoints">ยืนยันการแลก</button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

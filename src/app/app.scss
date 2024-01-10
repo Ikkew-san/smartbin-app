@@ -14,3 +14,48 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: Kanit;
+    src: url("../assets/fonts/Kanit-Light.ttf") format("truetype");
+  }
+  
+  * {
+    font-family: Kanit;
+  }
+  
+  ion-navbar {
+    padding: 0 10px !important;
+    min-height: 50px !important;
+  }
+  
+  ion-content {
+    background-color: #fff !important;
+  }
+  
+  .tabbar {
+    background: #fff !important;
+  }
+  
+  html,
+  body,
+  .back-transparent,
+  ion-app,
+  .nav-decor {
+    background: transparent !important;
+  }
+  
+  ion-alert {
+   .alert-wrapper {
+      border-radius: 1em !important;
+      .alert-title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+  
+  .toast-wrapper {
+    background: rgba(51,51,51,0.9) !important;
+  }

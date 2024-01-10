@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <div class="logo">
+      <img src="../assets/icon/logo.png" />
+      <label>SmartBin</label>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let data of dataUser">
+    <div class="avatar">
+      <ion-row justify-content-center padding-top>
+        <ion-col col-4>
+          <img class="avatar" [src]="image_url" />
+        </ion-col>
+      </ion-row>
+
+      <div text-center>
+        <ion-label class="name" no-margin>
+          {{ data.user_firstname }} {{ data.user_lastname }}
+        </ion-label>
+        <ion-label class="username" no-margin>
+          <ion-icon name="person"></ion-icon>
+          {{ data.user_username }}
+        </ion-label>
+        <button ion-button small round outline margin-vertical (click)="gotoProfilePage(data)">
+          แก้ไขโปรไฟล์
+        </button>
+      </div>
+    </div>
+
+    <hr margin-horizontal />
+
+    <div class="detail">
+      <ion-list>
+        <button ion-item (click)="gotoEditPage('email', data.user_email)">
+          <ion-icon name="ios-mail" item-start></ion-icon>
+          อีเมล
+          <ion-note item-end>
+            {{ data.user_email }}
+          </ion-note>
+        </button>
+
+        <button ion-item (click)="gotoEditPage('tel', data.user_telephone)">
+          <ion-icon name="ios-call" item-start></ion-icon>
+          หมายเลขโทรศัพท์
+          <ion-note *ngIf="data.user_telephone != null" item-end>
+            {{ data.user_telephone }}
+          </ion-note>
+          <ion-note *ngIf="data.user_telephone == null" item-end>
+            ไม่ได้ระบุ
+          </ion-note>
+        </button>
+
+        <button ion-item (click)="gotoEditPage('pwd', data.user_password)">
+          <ion-icon name="ios-key" item-start></ion-icon>
+          เปลี่ยนรหัสผ่าน
+          <ion-note item-end>
+            ********
+          </ion-note>
+        </button>
+
+        <!-- <button class="deleteAccount" (click)="closeAccount()" ion-item>
+          ปิดบัญชี
+        </button> -->
+      </ion-list>
+
+      <hr margin-horizontal />
+
+      <ion-buttons margin>
+        <button ion-button full color="danger" (click)="logout()">
+          ออกจากระบบ
+        </button>
+      </ion-buttons>
+    </div>
+  </div>
+</ion-content>

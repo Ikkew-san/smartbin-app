@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <span style="font-size: 14pt">ประวัติสะสมคะแนน</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row style="background-color:gainsboro">
+      <ion-col col-3>วันเวลา</ion-col>
+      <ion-col col-5>ถังขยะ</ion-col>
+      <ion-col col-2 text-center>จำนวน</ion-col>
+      <ion-col col-2 text-center>คะแนน</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row *ngFor="let data of dataCumulative">
+      <ion-col col-3>{{data.cumulative_datetime}}</ion-col>
+      <ion-col col-5>{{data.smartbin_hostname}}</ion-col>
+      <ion-col col-2 text-center>{{data.cumulative_amount}}</ion-col>
+      <ion-col col-2 text-center>{{data.cumulative_points}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,24 @@
+page-user-edit {
+    ion-navbar {
+        padding: 0px !important;
+    }
+
+    ion-content.input-1 {
+        ion-item {
+            .item-inner {   
+                padding: 0 !important;
+
+                .text-input {
+                    margin: 11px 16px !important;
+                }
+            }
+        }
+
+        div.btnSaveEdit {
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}

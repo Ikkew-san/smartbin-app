@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="navbar">
+    <span style="font-size: 14pt">โปรไฟล์ของฉัน</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-horizontal>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <button ion-item (click)="getImage()">
+      รูปโปรไฟล์
+      <img class="avatar" [src]="image_url" item-end />
+    </button>
+
+    <button ion-item (click)="gotoEditPage('name')">
+      ชื่อ-นามสกุล
+      <ion-note item-end> {{ firstname }} {{ lastname }} </ion-note>
+    </button>
+
+    <button ion-item>
+      <ion-label class="text-1">วันเกิด</ion-label>
+      <ion-note item-end>
+        <ion-datetime displayFormat="DD MMMM YYYY" [ngModel]="birthday" monthNames="มกราคม,กุมภาพันธ์,มีนาคม,
+          เมษายน,พฤษภาคม,มิถุนายน, กรกฎาคม,สิงหาคม,กันยายน,
+          ตุลาคม,พฤศจิกายน,ธันวาคม" doneText="ยืนยัน" cancelText="ยกเลิก" (ionChange)="setBirthday($event)"
+          placeholder="ยังไม่ได้ระบุ" no-padding></ion-datetime>
+      </ion-note>
+    </button>
+
+    <button ion-item>
+      <ion-label>เพศ</ion-label>
+      <ion-select [ngModel]="gender" (ionChange)="setGender($event)" okText="ยืนยัน" cancelText="ยกเลิก"
+        placeholder="ยังไม่ได้ระบุ" no-padding item-end>
+        <ion-option value="1">ชาย</ion-option>
+        <ion-option value="2">หญิง</ion-option>
+      </ion-select>
+    </button>
+
+    <ion-item></ion-item>
+  </ion-list>
+</ion-content>

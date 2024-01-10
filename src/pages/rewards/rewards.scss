@@ -1,0 +1,99 @@
+page-rewards {
+  div.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #63a094;
+
+    img {
+      width: 30px;
+      margin-right: 5px;
+    }
+  }
+
+  div.bg-title {
+    background-color: #63a094;
+    height: 25vh;
+
+    img {
+      margin: 2.5vh 9vw 1em 1em;
+      height: 17vh;
+    }
+  }
+
+  .title-page {
+    margin-top: -25vh;
+
+    .title {
+      display: flex;
+      height: 20vh !important;
+      align-items: center;
+
+      ion-label {
+        text-shadow: 2px 2px #c0c0c0;
+        margin-left: 0.5em;
+        margin-bottom: -0.1em;
+        font-size: 6.5vh;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    .myPoints {
+      // justify-content: center;
+
+      ion-label {
+        display: inline-flex;
+        font-size: 2.2vh;
+        box-shadow: 2.5px 3px rgb(230, 230, 230);
+        background-color: #fff;
+        border-top-left-radius: 0.75em;
+        border-bottom-left-radius: 0.75em;
+        padding: 0.6vh 2.25vw 0.6vh 0.75vh;
+        margin-top: 0.75vh;
+
+        span {
+          align-self: center;
+        }
+
+        img {
+          align-self: center;
+          margin-right: 1.5vw;
+          width: 2.5vh;
+          height: 2.5vh;
+        }
+      }
+    }
+  }
+
+  ion-card {
+    margin: 5px !important;
+    width: auto !important;
+    border-radius: 1rem !important;
+
+    [padding-horizontal] {
+      padding-top: 10px !important;
+      padding-bottom: 0;
+    }
+
+    ion-grid {
+      padding-top: 2px;
+    }
+
+    .coin {
+      width: 22px;
+      height: 22px;
+    }
+
+    .button {
+      padding: 0 25px;
+      margin-bottom: 6px;
+      border-radius: 1em;
+    }
+    .pricetext{
+      margin-left: 22px !important;
+      margin-bottom: 4px;
+    }
+  }
+}

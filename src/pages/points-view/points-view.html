@@ -1,0 +1,36 @@
+<ion-content padding no-bounce>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col class="logo">
+        <img src="../assets/icon/logo.png">
+        <label>SmartBin</label>
+      </ion-col>
+
+      <ion-col class="avatar">
+        <img [src]="image_url">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="text-header" margin text-center>
+      <ion-label class="text-1" no-margin>ยินดีต้อนรับกลับมา</ion-label>
+      <ion-label class="text-2" no-margin>คุณ <strong>{{firstname}} {{lastname}}</strong></ion-label>
+      <ion-label class="my-points" no-margin>คุณมีคะแนนอยู่ <span>{{myPoints}}</span> คะแนน</ion-label>
+    </ion-row>
+
+    <ion-row class="content">
+      <div class="bottle">
+        <img src="../assets/imgs/bottle.svg">
+        <ion-label no-margin>x {{bottle}}</ion-label>
+      </div>
+    </ion-row>
+
+    <ion-row class="points" text-center margin-horizontal>
+      <ion-label class="new-points" no-margin>คะแนนที่คุณได้ <strong>{{newPoints}}</strong> คะแนน</ion-label>
+      <ion-label class="points-bottle" no-margin><span>{{pointsBottle}}</span> คะแนน : 1 ขวด</ion-label>
+    </ion-row>
+
+  </ion-grid>
+  <footer margin-horizontal>
+    <button ion-button color="danger" full (click)="logoutPoints()">ออกจากระบบ</button>
+  </footer>
+</ion-content>

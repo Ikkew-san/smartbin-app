@@ -1,0 +1,58 @@
+page-basket {
+  ion-navbar {
+    padding: 0px !important;
+  }
+
+  ion-content {
+
+    [col-1],
+    [col-8] {
+      padding: 8px;
+    }
+
+    [col-1] {
+      display: flex;
+      align-items: center;
+    }
+
+    [col-3] {
+      padding: 0;
+    }
+
+    [col-8]>ion-row {
+      flex-flow: row-reverse wrap;
+
+      [col-2] {
+        display: flex;
+        align-items: center;
+
+        ion-input {
+          input {
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+
+  ion-footer {
+    .coin {
+      width: 18px;
+      height: 18px;
+    }
+
+    ion-row {
+      div.amountPoints {
+        display: flex !important;
+        flex-flow: row-reverse wrap;
+
+        img {
+          margin-right: 8px;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
